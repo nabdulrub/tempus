@@ -1,6 +1,6 @@
-import Location from "./Location";
-import Search from "./Search";
-import DegreeSwitch from "./DegreeSwitch";
+import Location from "../components/Navbar/Location";
+import Search from "../components/Navbar/Search";
+import DegreeSwitch from "../components/Navbar/DegreeSwitch";
 import "./Navbar.css";
 
 const Navbar = ({ setCity, city, location }) => {

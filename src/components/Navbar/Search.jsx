@@ -1,5 +1,6 @@
 import { AutoComplete, Input } from "antd";
 import { CiSearch } from "react-icons/ci";
+import "./Search.css";
 
 const Search = ({ setCity, city }) => {
   const handleForm = (e) => {

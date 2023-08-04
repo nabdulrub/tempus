@@ -1,4 +1,5 @@
 import { Switch } from "antd";
+import "./DegreeSwitch.css";
 
 const DegreeSwitch = () => {
   return (

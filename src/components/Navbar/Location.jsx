@@ -1,5 +1,6 @@
 import { MdLocationOn } from "react-icons/md";
 import { useEffect, useState } from "react";
+import "./Location.css";
 
 const Location = ({ location }) => {
   const [currentLocation, setCurrentLocation] = useState(location.name);

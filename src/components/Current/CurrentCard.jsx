@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Clock from "react-live-clock";
+import "./CurrentCard.css";
 
 const CurrentCard = ({ temp, location }) => {
   const [tempNow] = useState(temp);

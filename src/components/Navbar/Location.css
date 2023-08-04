@@ -1,0 +1,17 @@
+.Location {
+    font-weight: 100;
+    font-size: 1.3em;
+    color: var(--textWhite);
+    transition: all 0.3s;
+  }
+  
+  .locationWrapper {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .secondLocation {
+    color: var(--textGray);
+  }
