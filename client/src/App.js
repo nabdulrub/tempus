@@ -21,15 +21,17 @@ function App() {
   const [rainData, setRainData] = useState([]);
   const [cityName, setCityName] = useState("");
   const [timezone, setTimezone] = useState(null);
+  const [unit, setUnit] = useState("imperial");
   const [lat, setLat] = useState(null);
   const [lon, setLon] = useState(null);
 
   async function fetchWeather() {
     try {
-      const weatherData = await fetchWeatherData(city);
+      const weatherData = await fetchWeatherData(city, unit);
       const forcastData = await fetchForecastData(
         weatherData.coord.lat,
-        weatherData.coord.lon
+        weatherData.coord.lon,
+        unit
       );
 
       setLat(forcastData.lat);
@@ -69,7 +71,7 @@ function App() {
     async function fetchCity() {
       if (lat !== null && lon !== null) {
         try {
-          const cityNameData = await fetchCityName(lat, lon);
+          const cityNameData = await fetchCityName(lat, lon, unit);
           setCityName(cityNameData);
         } catch (error) {
           console.error("Error fetching city name:", error);
@@ -92,6 +94,7 @@ function App() {
             cityName={cityName}
             setCityName={setCityName}
             location={location}
+            setUnit={setUnit}
           />
         </header>
         <body>
@@ -114,7 +117,7 @@ function App() {
             <div className="flex flex-col gap-6">
               <h2 className="text-text-white text-2xl">Popular cities</h2>
 
-              <PopularCities />
+              <PopularCities unit={unit} />
             </div>
           </div>
         </body>

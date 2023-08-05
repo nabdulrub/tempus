@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import { fetchPopularCity } from "../api/popularCitiesApi";
 import PopularCity from "../components/Popular/PopularCity";
 
-const PopularCities = () => {
+const PopularCities = ({ unit }) => {
   const cities = [{ city: "Tokyo" }, { city: "New York" }, { city: "Cairo" }];
   const [cityCollections, setCityCollections] = useState([]);
 
   const fetchCities = async () => {
     try {
       const fetchedCities = await Promise.all(
-        cities.map(async (cityObj) => {
-          const cityData = await fetchPopularCity(cityObj.city);
+        cities.map(async (city) => {
+          const cityData = await fetchPopularCity(city.city, unit);
           return cityData;
         })
       );

@@ -1,35 +1,13 @@
-.switchWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.switch {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  cursor: pointer;
-  text-align: center;
-}
-
-.switch::placeholder {
-  color: var(--backgroundColor);
-}
-
-.switch > button:hover {
-  background-color: var(--textGray);
-}
-
-.switch > button {
-  transition: all 0.3s;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 1em;
+.ant-switch-inner {
   background-color: var(--secondaryColor);
-  padding: 10px;
-  border-radius: 100%;
-  text-align: center;
+  color: black;
+}
+
+.ant-switch {
+  display: grid;
+}
+
+.ant-switch-handle {
+  height: 75px;
+  width: 100px;
 }
