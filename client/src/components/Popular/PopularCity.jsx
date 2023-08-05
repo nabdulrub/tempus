@@ -1,5 +1,3 @@
-import "./PopularCity.css";
-
 const PopularCity = ({
   country,
   city,
@@ -10,7 +8,7 @@ const PopularCity = ({
 }) => {
   return (
     <div
-      className="bg-secondary-color w-full flex text-text-white gap-1 px-8 py-2 max-w-[300px] rounded-3xl justify-between max-h-[130px]"
+      className="bg-secondary-color w-full flex text-text-white gap-1 px-8 py-2 max-w-[300px] rounded-3xl justify-between max-h-[130px] hover:scale-105 transition-all duration-300"
       {...props}
     >
       <div className="flex flex-col gap-2 justify-center">

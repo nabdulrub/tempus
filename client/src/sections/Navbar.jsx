@@ -3,11 +3,11 @@ import Search from "../components/Navbar/Search";
 import DegreeSwitch from "../components/Navbar/DegreeSwitch";
 import "./Navbar.css";
 
-const Navbar = ({ setCity, city, location }) => {
+const Navbar = ({ setCity, city, cityName, setCityName, location }) => {
   return (
     <div className="navbarContainer">
       <div className="location">
-        <Location location={location} />
+        <Location cityName={cityName} setCityName={setCityName} location={location} />
       </div>
       <div>
         <Search setCity={setCity} city={city} />

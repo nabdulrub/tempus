@@ -3,7 +3,7 @@ import CurrentCard from "./CurrentCard";
 import "./Current.css";
 import ForcastCard from "../Forcast/ForcastCard";
 
-const Current = ({ temp, location, sevenDayForcast, forcast }) => {
+const Current = ({ temp, location, sevenDayForcast, timezone }) => {
   const Tabs = ["Today", "Tomorrow", "Next 7 Days"];
 
   function getDayOfWeek(timestamp) {
@@ -24,7 +24,7 @@ const Current = ({ temp, location, sevenDayForcast, forcast }) => {
         ))}
       </div>
       <div className="currentContent">
-        <CurrentCard temp={temp} location={location} />
+        <CurrentCard temp={temp} location={location} timezone={timezone} />
         <div className="forcast-container">
           {sevenDayForcast.map((weather, index) => {
             const iconCode = weather.weather?.[0]?.icon || null;

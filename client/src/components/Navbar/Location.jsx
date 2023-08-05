@@ -1,21 +1,19 @@
 import { MdLocationOn } from "react-icons/md";
 import { useEffect, useState } from "react";
 import "./Location.css";
+import { set } from "lodash";
 
-const Location = ({ location }) => {
-  const [currentLocation, setCurrentLocation] = useState(location.name);
-
-  const currentPlace = location.name;
-
+const Location = ({ cityName, setCityName, location }) => {
   useEffect(() => {
-    setCurrentLocation(location.name);
-  }, [currentPlace]);
+    setCityName(cityName);
+  }, [location]);
+
   return (
     <div className="locationWrapper">
       <MdLocationOn size={25} color="white" />
       <h1 className="Location">
-        {currentLocation},
-        <span className="secondLocation"> {location.sys?.country}</span>
+        {cityName.name},
+        <span className="secondLocation"> {cityName?.sys?.country}</span>
       </h1>
     </div>
   );

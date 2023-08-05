@@ -3,6 +3,8 @@
   border-radius: 40px;
   width: 100%;
   max-width: 255px;
+  z-index: 2;
+  animation: fromLeft 1s forwards;
 }
 
 .cardHeader {
