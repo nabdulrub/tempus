@@ -17,7 +17,7 @@
 body {
   display: grid;
   grid-template-columns: repeat(4, auto);
-  grid-template-rows: repeat(2, 46.5%);
+  grid-template-rows: repeat(2, 310px);
   align-items: start;
   justify-content: center;
   gap: 2rem;

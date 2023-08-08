@@ -1,26 +1,44 @@
-import { useState, useEffect } from "react";
-import Clock from "react-live-clock";
-import "./CurrentCard.css";
+import { useState, useEffect } from "react"
+import Clock from "react-live-clock"
+import "./CurrentCard.css"
 
 const CurrentCard = ({ location, timezone }) => {
-  const [Temperature, setTemperature] = useState(location?.main?.temp); //Used to update the tempature state.
+  const [Temperature, setTemperature] = useState(location?.main?.temp) //Used to update the tempature state.
+  const [todayDate, setTodayDate] = useState(null)
 
-  let iconCode = location.weather?.[0]?.icon || null;
+  const weekday = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ]
+
+  const getTodayDate = () => {
+    const date = new Date()
+    let day = weekday[date.getDay()]
+    setTodayDate(day)
+  }
+
+  let iconCode = location.weather?.[0]?.icon || null
 
   let iconURL = iconCode
     ? `http://openweathermap.org/img/wn/${iconCode}@2x.png`
-    : null;
+    : null
 
-  const currentLocation = location.current;
+  const currentLocation = location.current
 
   useEffect(() => {
-    setTemperature(currentLocation?.temp); // Sets the tempature when the city changes to update state.
-  }, [location]);
+    setTemperature(currentLocation?.temp) // Sets the tempature when the city changes to update state.
+    getTodayDate()
+  }, [location])
 
   return (
     <div className="Card">
       <div className="cardHeader">
-        <h1>Monday</h1>
+        <h1>{todayDate}</h1>
         <h1>
           <Clock format={"HH:mm"} ticking={true} timezone={timezone} />
         </h1>
@@ -57,7 +75,7 @@ const CurrentCard = ({ location, timezone }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CurrentCard;
+export default CurrentCard
